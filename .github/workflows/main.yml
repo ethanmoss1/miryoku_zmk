@@ -100,7 +100,7 @@ jobs:
           echo -n '#define ' > "$tmpfile"
           echo -n "MIRYOKU_KEYBOARD_$keyboard_base" | tr  -c '[:alnum:]' '_' | tr '[:lower:]' '[:upper:]' >> "$tmpfile"
           echo >> "$tmpfile"
-          cat "$configfile" >> "$tmpfile"
+          cat "" >> "$tmpfile"
           mv "$tmpfile" "$configfile"
 
           run_name="miryoku_zmk"
@@ -372,4 +372,3 @@ jobs:
         with:
           name: ${{ steps.main.outputs.run_name }}
           path: ${{ steps.main.outputs.artifact_dir }}
-
